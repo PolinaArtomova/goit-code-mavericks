@@ -216,4 +216,52 @@
   .sale-styles-list {
     margin-right: 0;
   }
+
+  .pictures-wrapper {
+    position: relative;
+
+  }
+
+  .big-watch {
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+  }
+
+  .big-watch img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+  }
+
+  .big-watch.hide-big-watch img {
+    display: none;
+
+  }
+
+
+  .big-watch::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .big-watch.show-hover::after {
+    background-image: var(--hover-image);
+    opacity: 1;
+
+  }
 }
